@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class P1Q3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        
         // Q3 83589795
         int userCardNum, cardNum, i;
         int[] numOfCard = new int[8];
@@ -17,7 +17,7 @@ public class P1Q3 {
 
         System.out.print("Enter card number: ");
         userCardNum = scanner.nextInt();
-
+        scanner.close();
         // to not change the original userCardNum
         cardNum = userCardNum;
 
@@ -54,6 +54,6 @@ public class P1Q3 {
             System.out.print("The valid Card NUmber should be " + correctedCardNum + ".");
         }
 
-        scanner.close();
+
     }
 }

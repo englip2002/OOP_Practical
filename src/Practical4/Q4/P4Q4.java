@@ -17,9 +17,8 @@ public class P4Q4 {
 
         while (choice != -1) {
             Scanner scanner = new Scanner(System.in);
-
-            // accept data, set in one object then transfer to registeration class at the
-            // end
+            
+            // accept data, set in one object then transfer to registeration class at the end
             System.out.println("\nCar " + (i+1));
             System.out.print("Enter Name:");
             String name = scanner.nextLine();
@@ -57,6 +56,5 @@ public class P4Q4 {
         for (i = 0; i < 2; i++) {
             System.out.println(carRegister[i].toString());
         }
-
     }
 }

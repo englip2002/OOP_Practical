@@ -11,7 +11,7 @@ public class P3Q1 {
 
         System.out.print("Enter number of quiz scores to process: ");
         numOfQuiz = scanner.nextInt();
-
+        scanner.close();
         double[] scores = new double[numOfQuiz];
 
         // get total and count average
@@ -36,7 +36,7 @@ public class P3Q1 {
         System.out.printf("Number of scores above or equal to the average is %d\n", aboveAvg);
         System.out.printf("Number of scores below the average is %d\n", belowAvg);
 
-        scanner.close();
+       
     }
 
 }

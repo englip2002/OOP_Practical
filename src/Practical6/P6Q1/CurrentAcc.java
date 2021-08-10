@@ -1,43 +1,43 @@
 package Practical6.P6Q1;
 
 public class CurrentAcc extends Account {
+    final int FREE_TRANSACTION_LIMIT = 10;
+    private int numOfTransaction = 0;
+    private static double transactionFee = 0.2;
 
-    private int numOfTransaction=0;
-    private static double transactionFee=0.2;
-    
-    public CurrentAcc(int accountNum,double balance, String dateCreated){
-        this.setAccountNum(accountNum);
-        this.setBalance(balance);
-        this.setDateCreated(dateCreated);
+    public CurrentAcc(int accountNum, double balance, String dateCreated) {
+        super(accountNum, balance, dateCreated);
     }
 
     @Override
-    public void deposit(double cash){
-        
-        if(numOfTransaction>10){
-            setBalance(getBalance()+cash-transactionFee);
-        }
-        else{
-            setBalance(getBalance()+cash);
+    public void deposit(double cash) {
+
+        if (numOfTransaction > FREE_TRANSACTION_LIMIT) {
+            setBalance(getBalance() + cash - transactionFee);
+        } else {
+            setBalance(getBalance() + cash);
         }
         numOfTransaction++;
     }
 
     @Override
-    public void withdrawal(double cash){
-        if(numOfTransaction>10){
-            setBalance(getBalance()-cash-transactionFee);
-        }
-        else{
-            setBalance(getBalance()-cash);
+    public void withdrawal(double cash) {
+        if (cash > getBalance()) {
+            System.out.println("Invalid Input.");
+        } else {
+            if (numOfTransaction > FREE_TRANSACTION_LIMIT) {
+                setBalance(getBalance() - cash - transactionFee);
+            } else {
+                setBalance(getBalance() - cash);
+            }
         }
         numOfTransaction++;
     }
 
     @Override
-    public String toString(){
-        return String.format("%sNum Of Transaction:%d\nTransaction Fee: RM%.2f per Transaction\n", super.toString(),numOfTransaction,transactionFee);
+    public String toString() {
+        return String.format("%sNum Of Transaction:%d\nTransaction Fee: RM%.2f per Transaction\n", super.toString(),
+                numOfTransaction, transactionFee);
     }
-
 
 }

@@ -3,14 +3,11 @@ package Practical6.P6Q1;
 public class SavingAcc extends Account {
 
     private double interestRate;
-
-
+    
     public SavingAcc(){}
 
     public SavingAcc(int accountNum,double balance, String dateCreated,double interestRate){
-        this.setAccountNum(accountNum);
-        this.setBalance(balance);
-        this.setDateCreated(dateCreated);
+        super(accountNum, balance, dateCreated);
         this.interestRate=interestRate;
     }
 

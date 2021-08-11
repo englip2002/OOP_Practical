@@ -1,7 +1,7 @@
 package Practical6.P6Q1;
 
 public class CurrentAcc extends Account {
-    final int FREE_TRANSACTION_LIMIT = 10;
+    final int FREE_TRANSACTION_LIMIT = 1;
     private int numOfTransaction = 0;
     private static double transactionFee = 0.2;
 
@@ -12,7 +12,7 @@ public class CurrentAcc extends Account {
     @Override
     public void deposit(double cash) {
 
-        if (numOfTransaction > FREE_TRANSACTION_LIMIT) {
+        if (numOfTransaction >= FREE_TRANSACTION_LIMIT) {
             setBalance(getBalance() + cash - transactionFee);
         } else {
             setBalance(getBalance() + cash);
@@ -25,7 +25,7 @@ public class CurrentAcc extends Account {
         if (cash > getBalance()) {
             System.out.println("Invalid Input.");
         } else {
-            if (numOfTransaction > FREE_TRANSACTION_LIMIT) {
+            if (numOfTransaction >= FREE_TRANSACTION_LIMIT) {
                 setBalance(getBalance() - cash - transactionFee);
             } else {
                 setBalance(getBalance() - cash);

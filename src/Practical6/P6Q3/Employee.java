@@ -1,17 +1,18 @@
-package Practical6.P6Q2;
+package Practical6.P6Q3;
 
 public class Employee {
     private String name;
     private int yearJoined;
     private double basicSalary;
 
-    public Employee(String name, int yearJoined, double basicSalary){
-        this.name=name;
-        this.yearJoined=yearJoined;
-        this.basicSalary=basicSalary;
+    public Employee(String name, int yearJoined, double basicSalary) {
+        this.name = name;
+        this.yearJoined = yearJoined;
+        this.basicSalary = basicSalary;
     }
 
-    public Employee(){}
+    public Employee() {
+    }
 
     public String getName() {
         return name;
@@ -37,13 +38,19 @@ public class Employee {
         this.basicSalary = basicSalary;
     }
 
-    public String toString(){
-        return String.format("Name: %s\nYear Joined: %d\nBasic Salary: %.2f\n", name,yearJoined,basicSalary);
+    public String toString() {
+        return String.format("Name: %s\nYear Joined: %d\nBasic Salary: %.2f\n", name, yearJoined, basicSalary);
     }
 
-    public double calculateSalary(){
+    public double calculateSalary() {
         return basicSalary;
     }
 
+    public boolean equals(String name) {
+        if (this.name.equals(name))
+            return true;
+        else
+            return false;
+    }
 
 }

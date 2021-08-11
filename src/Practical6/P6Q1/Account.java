@@ -49,6 +49,13 @@ public class Account {
         return String.format("Account Number: %d\nBalance: %.2f\nDate Created: %s\n", accountNum,balance,dateCreated);
     }
 
+    public boolean equals(int accountNum){
+        if(this.accountNum==accountNum)
+            return true;
+        else
+            return false;
+    }
+
 }
 
 

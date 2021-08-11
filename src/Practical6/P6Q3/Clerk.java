@@ -1,4 +1,4 @@
-package Practical6.P6Q2;
+package Practical6.P6Q3;
 
 public class Clerk extends Employee {
     private double allowance;

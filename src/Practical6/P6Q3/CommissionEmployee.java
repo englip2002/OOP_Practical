@@ -1,4 +1,4 @@
-package Practical6.P6Q2;
+package Practical6.P6Q3;
 
 public class CommissionEmployee extends Employee {
     private double grossSale;

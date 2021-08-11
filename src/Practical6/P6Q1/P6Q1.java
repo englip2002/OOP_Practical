@@ -2,7 +2,7 @@ package Practical6.P6Q1;
 
 import java.util.Scanner;
 
-public class T6Q1 {
+public class P6Q1 {
     public static void main(String[] args) {
         SavingAcc savAcc1 = new SavingAcc(123, 100, "3/5/21", 0.012);
         CurrentAcc curAcc1 = new CurrentAcc(123, 100, "3/5/21");

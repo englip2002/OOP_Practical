@@ -46,11 +46,12 @@ public class Employee {
         return basicSalary;
     }
 
-    public boolean equals(String name) {
-        if (this.name.equals(name))
-            return true;
-        else
-            return false;
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Employee) {
+            return this.name.equals( ( (Employee)obj ).getName() );
+        }
+        return false;
     }
 
 }

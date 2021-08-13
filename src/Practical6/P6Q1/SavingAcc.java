@@ -2,13 +2,12 @@ package Practical6.P6Q1;
 
 public class SavingAcc extends Account {
 
-    private double interestRate;
+    private static double interestRate=0.02;
     
     public SavingAcc(){}
 
-    public SavingAcc(int accountNum,double balance, String dateCreated,double interestRate){
+    public SavingAcc(int accountNum,double balance, String dateCreated){
         super(accountNum, balance, dateCreated);
-        this.interestRate=interestRate;
     }
 
     public double calculateInterest(){
@@ -16,9 +15,9 @@ public class SavingAcc extends Account {
     }
 
     public void addInterest(){
-        setBalance(getBalance()+calculateInterest());
+        deposit(calculateInterest());
     }
-   
+    
     @Override
     public String toString(){
         return String.format("%sInterest Rate:%.2f%%\n", super.toString(),interestRate*100);

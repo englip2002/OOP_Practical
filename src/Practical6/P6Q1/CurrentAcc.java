@@ -13,23 +13,22 @@ public class CurrentAcc extends Account {
     public void deposit(double cash) {
 
         if (numOfTransaction >= FREE_TRANSACTION_LIMIT) {
-            setBalance(getBalance() + cash - transactionFee);
-        } else {
-            setBalance(getBalance() + cash);
+            super.withdrawal(transactionFee);
         }
+        super.deposit(cash);
+
         numOfTransaction++;
     }
 
     @Override
     public void withdrawal(double cash) {
-        if (cash > getBalance()) {
+        if ((cash+transactionFee) > getBalance()) {
             System.out.println("Invalid Input.");
         } else {
             if (numOfTransaction >= FREE_TRANSACTION_LIMIT) {
-                setBalance(getBalance() - cash - transactionFee);
-            } else {
-                setBalance(getBalance() - cash);
+               super.withdrawal(transactionFee);
             }
+            super.withdrawal(cash);
         }
         numOfTransaction++;
     }

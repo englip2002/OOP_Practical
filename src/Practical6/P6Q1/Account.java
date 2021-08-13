@@ -25,10 +25,6 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
     public String getDateCreated() {
         return dateCreated;
     }
@@ -49,8 +45,9 @@ public class Account {
         return String.format("Account Number: %d\nBalance: %.2f\nDate Created: %s\n", accountNum,balance,dateCreated);
     }
 
-    public boolean equals(int accountNum){
-        if(this.accountNum==accountNum)
+    public boolean equals(Account account){
+        //return this.accountNum==account.accountNum
+        if(this.accountNum==account.accountNum)
             return true;
         else
             return false;

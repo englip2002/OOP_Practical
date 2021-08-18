@@ -30,6 +30,6 @@ public class InpatientBill extends PatientBill{
 
     @Override
     public String toString(){
-        return String.format("%sSpecialist Charge: %.2f\nLab Charges: %.2f\nRoom Charges: %.2f\nTotal: %.2f\n", super.toString(),specialistCharges,labCharges,(durationOfStay*roomRate),calculationCharge());
+        return String.format("%sSpecialist Charge: %.2f\nLab Charges: %.2f\nRoom Charges(%c): %.2f\nTotal: %.2f\n", super.toString(),specialistCharges,labCharges,roomType,(durationOfStay*roomRate),calculationCharge());
     }
 }

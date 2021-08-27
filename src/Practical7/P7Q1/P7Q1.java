@@ -8,17 +8,37 @@ public class P7Q1 {
         patientBills[2] = new OutpatientBill("00003", "Randy", 25.00);
         patientBills[3] = new OutpatientBill("00004", "Morty", 21.00);
 
+        patientBills=SelectionSort(patientBills);
+
         for (int i = 0; i < 4; i++) {
             System.out.println(patientBills[i].toString());
         }
 
+        System.out.println("The total Collection is RM" + computeTotalCollection(patientBills));
+        
+
     }
 
-    public double computeTotalCollection(PatientBill[] patientBills){
-        double sum=0;
-        for(int i=0;i<4;i++){
-            sum+=patientBills[i].calculationCharge();
+    public static double computeTotalCollection(PatientBill[] patientBills) {
+        double sum = 0;
+        for (int i = 0; i < 4; i++) {
+            sum += patientBills[i].calculateCharge();
         }
         return sum;
+    }
+
+    public static PatientBill[] SelectionSort(PatientBill[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int indexOfSmallest=i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if(arr[j].compareTo(arr[indexOfSmallest])<0){  //means smaller
+                    indexOfSmallest=j;
+                }
+            }
+            PatientBill temp=arr[indexOfSmallest];  //smallest 
+            arr[indexOfSmallest]=arr[i];     
+            arr[i]=temp;
+        }
+        return arr;
     }
 }

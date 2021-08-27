@@ -7,10 +7,10 @@ public class ComparableCircle extends Circle implements Comparable, Colorable{
     @Override
     public boolean compareTo(Object obj){
         if(obj instanceof Circle){
-            if( Circle.getRadius==((Circle) obj).getRadius)
+            //if( Circle.getRadius==((Circle) obj).getRadius)
                 return true;
-            else
-                return false;
+            //else
+                //return false;
         }
         return false;
     }

@@ -4,17 +4,15 @@ abstract class PatientBill implements Comparable {
     protected String visitID;
     protected String name;
 
-    abstract double calculationCharge();
+    abstract double calculateCharge();
 
     public String toString() {
         return String.format("Visit ID: %s\nName: %s\n", visitID, name);
     }
 
     @Override
-    public boolean compareTo(Object obj) {
-        if (obj instanceof PatientBill) {
-            return this.name.equals(((PatientBill) obj).name);
-        }
-        return false;
+    public int compareTo(Object obj) {
+        return this.name.compareTo(((PatientBill) obj).name);
+
     }
 }

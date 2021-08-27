@@ -28,14 +28,14 @@ public class P7Q1 {
     }
 
     public static PatientBill[] SelectionSort(PatientBill[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int indexOfSmallest=i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(arr[j].compareTo(arr[indexOfSmallest])<0){  //means smaller
-                    indexOfSmallest=j;
+        for (int i = 0; i < arr.length; i++) { 
+            int indexOfSmallest=i; //assume smallest name index in 0
+            for (int j = i + 1; j < arr.length; j++) {  //compare to index 1,2,3....
+                if(arr[j].compareTo(arr[indexOfSmallest])<0){  //if current index is smaller
+                    indexOfSmallest=j;    //smallest index = current index
                 }
             }
-            PatientBill temp=arr[indexOfSmallest];  //smallest 
+            PatientBill temp=arr[indexOfSmallest];  //move smallest to current index
             arr[indexOfSmallest]=arr[i];     
             arr[i]=temp;
         }

@@ -6,7 +6,9 @@ public class P6Q2 {
         Emp[0] = new Employee("Tan", 2012, 1999.99);
         Emp[1] = new CommissionEmployee("Chan", 2013, 1858.00, 100, 0.3);
         Emp[2] = new Clerk("John", 2014, 1000, 50, 12);
-
+        //to use method from CommissionEmployee, else can only use method from Employee
+        ((CommissionEmployee) Emp[1]).getGrossSale(); 
+    
         printElements(Emp);
     }
 

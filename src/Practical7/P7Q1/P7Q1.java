@@ -21,7 +21,7 @@ public class P7Q1 {
 
     public static double computeTotalCollection(PatientBill[] patientBills) {
         double sum = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < patientBills.length; i++) {
             sum += patientBills[i].calculateCharge();
         }
         return sum;

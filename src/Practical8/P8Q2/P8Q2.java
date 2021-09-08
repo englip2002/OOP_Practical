@@ -12,7 +12,7 @@ public class P8Q2 {
         purchasedProduct[1]=new PurchasedProduct(product[1], 1);
 
 
-        Invoice invoice=new Invoice("INV003", cust, purchasedProduct);
+        Invoice invoice=new Invoice(cust, purchasedProduct);
 
         System.out.println(invoice.generateInvoice());
     }

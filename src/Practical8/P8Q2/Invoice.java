@@ -8,16 +8,22 @@ public class Invoice {
     private Customer customer;
     private PurchasedProduct[] purchasedProduct;
     private double grandTotal;
+    private static double invoiceCount=0;
 
-    public Invoice(String invoiceNo, Customer customer, PurchasedProduct[] purchasedProduct){
-        this.invoiceNo=invoiceNo;
+    public Invoice(Customer customer, PurchasedProduct[] purchasedProduct){
+        this.invoiceNo=generateInvoiceNum();
         this.customer=customer;
         this.purchasedProduct=purchasedProduct;
         this.date=LocalDate.now();
         this.grandTotal=calculateGrandTotal();
+        invoiceCount++;
     }
 
     public Invoice(){};
+
+    public String generateInvoiceNum(){
+        return String.format("INV%04d", invoiceCount);
+    }
 
     public String compileProductPurchased(){
         String CompiledProduct=new String();

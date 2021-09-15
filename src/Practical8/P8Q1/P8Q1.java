@@ -15,8 +15,7 @@ public class P8Q1 {
         FTE[0]=new FullTimeEmployee("Sin", "FTE001", 21, 2300, 500);
         FTE[1]=new FullTimeEmployee("Chiew", "FTE002", 22, 2300, 500);
         FTE[2]=new FullTimeEmployee("Chooi", "FTE003", 23, 2300, 500);
-
-
+        
         //payslip
         PartTimePayslip[] PTP=new PartTimePayslip[3];
         PTP[0]=new PartTimePayslip(PTE[0], 42);

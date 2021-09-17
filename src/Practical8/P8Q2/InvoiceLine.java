@@ -1,17 +1,17 @@
 package Practical8.P8Q2;
 
-public class PurchasedProduct {
+public class InvoiceLine {
     private Product products;
     private int Qty;
     private double lineTotal;
 
-    public PurchasedProduct(Product products,int Qty){
+    public InvoiceLine(Product products,int Qty){
         this.products=products;
         this.Qty=Qty;
         this.lineTotal=calculateLineTotal();
     };
 
-    public PurchasedProduct(){};
+    public InvoiceLine(){};
 
     public double getLineTotal(){
         return lineTotal;

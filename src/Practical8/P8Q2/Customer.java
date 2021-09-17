@@ -3,16 +3,13 @@ package Practical8.P8Q2;
 public class Customer {
     private String custID;
     private String companyName;
-    private String address;
-    private int postcode;
-    private String state;
+    private Address address;
 
-    public Customer(String custID, String companyName, String address,int postcode,String state){
+
+    public Customer(String custID, String companyName, Address address){
         this.custID=custID;
         this.companyName=companyName;
         this.address=address;
-        this.postcode=postcode;
-        this.state=state;
     }
 
     public Customer(){};
@@ -22,7 +19,11 @@ public class Customer {
     }
 
     public String generateAddress(){
-        return String.format("         %s\n         %s\n         %05d\n         %s\n", companyName,address,postcode,state);
+        return String.format("         %s\n         %s\n", companyName,address.toString());
+    }
+
+    public String toString(){
+        return String.format("%-15s %-20s", custID,companyName);
     }
 
 }

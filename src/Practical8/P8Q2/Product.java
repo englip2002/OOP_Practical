@@ -17,24 +17,16 @@ public class Product {
         return productNo;
     }
 
-    public void setProductNo(String productNo) {
-        this.productNo = productNo;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public double getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+    public String toString(){
+        return String.format("%-15s %-20s %-10.2f\n", productNo,description,unitPrice);
     }
 
 }

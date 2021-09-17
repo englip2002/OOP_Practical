@@ -1,17 +1,18 @@
 package Practical8.P8Q2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Invoice {
     private String invoiceNo;
     private LocalDate date;
     private Customer customer;
-    private PurchasedProduct[] purchasedProduct;
+    private ArrayList<InvoiceLine> purchasedProduct;
     private double grandTotal;
-    private static double invoiceCount=0;
+    private static int invoiceCount=0;
 
-    public Invoice(Customer customer, PurchasedProduct[] purchasedProduct){
-        this.invoiceNo=generateInvoiceNum();
+    public Invoice(Customer customer, ArrayList<InvoiceLine> purchasedProduct){
+        this.invoiceNo=String.format("INV%04d", invoiceCount);
         this.customer=customer;
         this.purchasedProduct=purchasedProduct;
         this.date=LocalDate.now();
@@ -21,22 +22,19 @@ public class Invoice {
 
     public Invoice(){};
 
-    public String generateInvoiceNum(){
-        return String.format("INV%04d", invoiceCount);
-    }
 
     public String compileProductPurchased(){
         String CompiledProduct=new String();
-        for(int i=0;i<purchasedProduct.length;i++){
-            CompiledProduct=CompiledProduct.concat(purchasedProduct[i].toString());
+        for(int i=0;i<purchasedProduct.size();i++){
+            CompiledProduct=CompiledProduct.concat(purchasedProduct.get(i).toString());
         }
         return CompiledProduct;
     }
 
     public double calculateGrandTotal(){
         double grandTotal=0;
-        for(int i=0;i<purchasedProduct.length;i++){
-            grandTotal+=purchasedProduct[i].getLineTotal();
+        for(int i=0;i<purchasedProduct.size();i++){
+            grandTotal+=purchasedProduct.get(i).getLineTotal();
         }
         return grandTotal;
     }

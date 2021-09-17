@@ -59,7 +59,7 @@ public class P8Q2 {
 
         Invoice invoice = new Invoice(cust[customerChoice], purchasedProduct);
 
-        System.out.println(invoice.generateInvoice());
+        System.out.println("\n\n"+invoice.generateInvoice());
 
         scanner.close();
     }

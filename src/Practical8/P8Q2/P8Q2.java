@@ -25,7 +25,7 @@ public class P8Q2 {
 
         int customerChoice = 0;
         // choose company
-        System.out.printf("%-15s %-20s\n", "  Customer ID", "Company Name");
+        System.out.printf("%-15s %-20s\n", "Customer ID", "Company Name");
         for (int i = 0; i < cust.length; i++) {
             System.out.println((i + 1) + ")" + cust[i].toString());
         }
@@ -33,7 +33,7 @@ public class P8Q2 {
         customerChoice = scanner.nextInt() - 1;
         scanner.nextLine();
 
-        System.out.printf("\n\n%-15s %-20s %-10s\n", "  ProductID", "Product Desc", "Unit Price");
+        System.out.printf("\n\n%-15s %-20s %-10s\n", "ProductID", "Product Desc", "Unit Price");
         for (int i = 0; i < product.length; i++) {
             System.out.print((i + 1) + ")" + product[i].toString());
         }
@@ -43,7 +43,7 @@ public class P8Q2 {
 
         ArrayList<InvoiceLine> purchasedProduct = new ArrayList<InvoiceLine>();
 
-        System.out.print("Enter your choice on product(-1 to exit): ");
+        System.out.print("Enter your choice on product(0 to exit): ");
         productChoice = scanner.nextInt() - 1;
 
         while (productChoice != -1) {

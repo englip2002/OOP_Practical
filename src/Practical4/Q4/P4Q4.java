@@ -56,5 +56,7 @@ public class P4Q4 {
         for (i = 0; i < 2; i++) {
             System.out.println(carRegister[i].toString());
         }
+
+    
     }
 }
